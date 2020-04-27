@@ -13,4 +13,8 @@ RUN pip install Flask
 RUN pip install gunicorn
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["gunicorn", "-b", ":80", "main:APP"]
+EXPOSE 8080
+
+ENTRYPOINT ["gunicorn", "-b", "0.0.0.0:8080", "main:APP"
+
+#ENTRYPOINT ["gunicorn", "-b", ":80", "main:APP"]
